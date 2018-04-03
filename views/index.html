@@ -17,7 +17,7 @@
     <!-- APPLICATION SCRIPTS -->
 
     <script type="text/javascript" src="scripts/app.js"></script>
-    <link href="/styles/styles.css" type=text/css rel=stylesheet>
+    <link href="styles/styles.css" type=text/css rel=stylesheet>
 
   </head>
 
@@ -106,11 +106,17 @@
 
     <p>we need g map generated</p>
     <!-- test map -->
+
     <div id="floating-panel">
       <input id="address" type="textbox" value="Sydney, NSW">
       <input id="submit" type="button" value="Geocode">
     </div>
+
+    
+    <div id="map-container" style="width: 100%; height: 100%">
+
     <div id="map"></div>
+    </div>
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -142,6 +148,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2fbIpye0lBCzCdXOTodi9GkoqcOMwSzw&callback=initMap">
     </script>
+
     <!-- test end map -->
 
 
