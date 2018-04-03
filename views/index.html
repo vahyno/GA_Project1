@@ -15,8 +15,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- APPLICATION SCRIPTS -->
-
-
+      <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2fbIpye0lBCzCdXOTodi9GkoqcOMwSzw&callback=initMap"></script>
 
     <script type="text/javascript" src="scripts/app.js"></script>
     <link href="styles/styles.css" type=text/css rel=stylesheet>
@@ -112,17 +112,15 @@
     <!--card -->
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <div id="indvidualMap" class="card-img-top">
+
+      </div>
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-
-
-    <!-- test map -->
-
 
     <div id="floating-panel">
       <input id="address" type="textbox" value="Sydney, NSW">
@@ -133,7 +131,10 @@
     <div id="map-container" style="width: 100%; height: 100%">
 
     <div id="map"></div>
+    <hr>
     </div>
+
+
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -162,9 +163,7 @@
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2fbIpye0lBCzCdXOTodi9GkoqcOMwSzw&callback=initMap">
-    </script>
+
 
 
 
@@ -177,6 +176,14 @@
 
 
     <!-- test end map -->
+    <!-- map fields populate here  -->
+        <section class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <h2></h2>
+            </div>
+          </div>
+          <!-- individualMaps -->
 
 
 
