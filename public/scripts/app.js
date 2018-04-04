@@ -10,77 +10,29 @@ $(document).ready(function() {
     error: handleError
   });
 
-  // handleSuccess(test_people)
+  $('#personData-form').on('submit', function(event){
+    event.preventDefault();
+    var formData = $(this).serialize();
+    console.log(formData);
+    this.reset();
+
+    $.ajax({
+      method: 'POST',
+      url: '/api/people',
+      data: formData,
+      success: handlePostSuccess,
+      error: handleError
+    });
+  });
+
 
 
 }); // doc ready ends here
 
-
-
-// function initMaps(indx) {
-//   var map = new google.maps.Map(document.getElementById(`map-${indx}`), {
-//     zoom: 14,
-//     center: {lat: 37.78, lng: -122.44}
-//   });
-//   var geocoder = new google.maps.Geocoder();
-//
-//   document.getElementById('submitButton').addEventListener('click', function(event) {
-//     event.preventDefault();
-//     geocodeAddress(geocoder, map);
-//   });
-// }
-//
-// function geocodeAddress(geocoder, resultsMap) {
-//   var address = document.getElementById('address').value;
-//   console.log(address);
-//   geocoder.geocode({'address': address}, function(results, status) {
-//     if (status === 'OK') {
-//       resultsMap.setCenter(results[0].geometry.location);
-//       var marker = new google.maps.Marker({
-//         map: resultsMap,
-//         position: results[0].geometry.location
-//       });
-//     } else {
-//       alert('Geocode was not successful for the following reason: ' + status);
-//     }
-//   });
-// }
-
-// var test_people = [{
-//   id: 123,
-//   name: 'teddy',
-//   yearOfBirth: 1976,
-//   address: 'prague'
-// },
-// {
-//   id: 124,
-//   name: 'bear',
-//   yearOfBirth: 1955,
-//   address: 'berlin'
-// },
-// {
-//   id: 125,
-//   name: 'koala',
-//   yearOfBirth: 1960,
-//   address: '255 bush street'
-// },{
-//   id: 126,
-//   name: 'monkey',
-//   yearOfBirth: 1974,
-//   address: 'oakland'
-// },
-// {
-//   id: 127,
-//   name: 'huuhu',
-//   yearOfBirth: 1900,
-//   address: 'madrid'
-// },
-// {
-//   id: 128,
-//   name: 'baba',
-//   yearOfBirth: 2000,
-//   address: 'san rafael, california'
-// }];
+function handlePostSuccess(people) {
+  console.log(people);
+  renderPerson(person);
+};
 
 
 function handleSuccess(people) {
@@ -110,7 +62,19 @@ function renderPerson(mapPerson){
       <hr>
     `);
 
-    let address = mapPerson.address;
+    let address = "";
+    if (mapPerson.streetAddress !== ""){
+      address += `${mapPerson.streetAddress}, `
+    }
+    if (mapPerson.city !== ""){
+      address += `${mapPerson.city}, `
+    }
+    if (mapPerson.zipcode !== ""){
+      address += `${mapPerson.zipcode}, `
+    }
+    address += mapPerson.country;
+
+    mapPerson.address;
     var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),
     {
       zoom: 14,

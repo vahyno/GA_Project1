@@ -1,33 +1,13 @@
 var db = require('./models');
 
 var seedPeople = [{
-  name: 'teddy',
+  name: 'Koala',
+  gender: 'male',
   yearOfBirth: 1976,
-  address: 'prague'
-},
-{
-  name: 'bear',
-  yearOfBirth: 1955,
-  address: 'berlin'
-},
-{
-  name: 'koala',
-  yearOfBirth: 1960,
-  address: '255 bush street'
-},{
-  name: 'monkey',
-  yearOfBirth: 1974,
-  address: 'oakland'
-},
-{
-  name: 'huuhu',
-  yearOfBirth: 1900,
-  address: 'madrid'
-},
-{
-  name: 'baba',
-  yearOfBirth: 2000,
-  address: 'san rafael, california'
+  streetAddress: "",
+  city: "San Rafael",
+  zipcode: "",
+  country: "US"
 }];
 
 db.Person.remove({}, function(err, removePeople){

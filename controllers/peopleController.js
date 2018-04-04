@@ -52,7 +52,15 @@ function index(req, res) {
 }
 
 
+function create(req, res) {
+  // create an album based on request body and send it back as JSON
+  console.log(req.body);
 
+  db.Person.create(req.body, function(err, person) {
+    if (err) { console.log('error', err); }
+    res.json(person);
+  });
+}
 
 
 
@@ -62,7 +70,7 @@ function index(req, res) {
 
 module.exports = {
   index: index,
-  // create: create,
+  create: create,
   // destroy: destroy,
   // update: update
 }

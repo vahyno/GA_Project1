@@ -3,8 +3,13 @@ var Schema = mongoose.Schema;
 
 var PeopleSchema = new Schema({
   name: String,
+  gender: String,
   yearOfBirth: Number,
-  address: String
+  streetAddress: String,
+  city: String,
+  zipcode: String,
+  country: String
+  // address: String
 });
 
 var Person = mongoose.model('Person', PeopleSchema );
