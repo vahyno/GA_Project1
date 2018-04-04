@@ -3,14 +3,14 @@ console.log('sanity check')// wait for the DOM to finish loading
 $(document).ready(function() {
   console.log('document ready');
   // all code to manipulate the DOM goes inside this function
-  // $.ajax({
-  //   method: 'GET',
-  //   url: '/api/',
-  //   success: handleSuccess,
-  //   error: handleError
-  // });
+  $.ajax({
+    method: 'GET',
+    url: '/api/people',
+    success: handleSuccess,
+    error: handleError
+  });
 
-  handleSuccess(test_people)
+  // handleSuccess(test_people)
 
 
 }); // doc ready ends here
@@ -46,24 +46,41 @@ $(document).ready(function() {
 //   });
 // }
 
-var test_people = [{
-  id: 123,
-  name: 'teddy',
-  yearOfBirth: 1976,
-  zipcode: 'prague'
-},
-{
-  id: 124,
-  name: 'bear',
-  yearOfBirth: 1955,
-  zipcode: '95008'
-},
-{
-  id: 125,
-  name: 'koala',
-  yearOfBirth: 1970,
-  zipcode: '255 bush street'
-}];
+// var test_people = [{
+//   id: 123,
+//   name: 'teddy',
+//   yearOfBirth: 1976,
+//   zipcode: 'prague'
+// },
+// {
+//   id: 124,
+//   name: 'bear',
+//   yearOfBirth: 1955,
+//   zipcode: 'berlin'
+// },
+// {
+//   id: 125,
+//   name: 'koala',
+//   yearOfBirth: 1960,
+//   zipcode: '255 bush street'
+// },{
+//   id: 126,
+//   name: 'monkey',
+//   yearOfBirth: 1974,
+//   zipcode: 'oakland'
+// },
+// {
+//   id: 127,
+//   name: 'huuhu',
+//   yearOfBirth: 1900,
+//   zipcode: 'madrid'
+// },
+// {
+//   id: 128,
+//   name: 'baba',
+//   yearOfBirth: 2000,
+//   zipcode: 'san rafael, california'
+// }];
 
 
 function handleSuccess(people) {
