@@ -31,7 +31,7 @@ $(document).ready(function() {
 // }
 //
 // function geocodeAddress(geocoder, resultsMap) {
-//   var address = document.getElementById('zipcode').value;
+//   var address = document.getElementById('address').value;
 //   console.log(address);
 //   geocoder.geocode({'address': address}, function(results, status) {
 //     if (status === 'OK') {
@@ -50,36 +50,36 @@ $(document).ready(function() {
 //   id: 123,
 //   name: 'teddy',
 //   yearOfBirth: 1976,
-//   zipcode: 'prague'
+//   address: 'prague'
 // },
 // {
 //   id: 124,
 //   name: 'bear',
 //   yearOfBirth: 1955,
-//   zipcode: 'berlin'
+//   address: 'berlin'
 // },
 // {
 //   id: 125,
 //   name: 'koala',
 //   yearOfBirth: 1960,
-//   zipcode: '255 bush street'
+//   address: '255 bush street'
 // },{
 //   id: 126,
 //   name: 'monkey',
 //   yearOfBirth: 1974,
-//   zipcode: 'oakland'
+//   address: 'oakland'
 // },
 // {
 //   id: 127,
 //   name: 'huuhu',
 //   yearOfBirth: 1900,
-//   zipcode: 'madrid'
+//   address: 'madrid'
 // },
 // {
 //   id: 128,
 //   name: 'baba',
 //   yearOfBirth: 2000,
-//   zipcode: 'san rafael, california'
+//   address: 'san rafael, california'
 // }];
 
 
@@ -98,7 +98,7 @@ function renderPerson(mapPerson){
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
 
   $('#map-container').append(`
-      <div id="map-${mapPerson.id}" style="height:50%;width:50%;"></div
+      <div id="map-${mapPerson._id}" style="height:50%;width:50%;"></div
 
       <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -110,8 +110,8 @@ function renderPerson(mapPerson){
       <hr>
     `);
 
-    let address = mapPerson.zipcode;
-    var map = new google.maps.Map(document.getElementById(`map-${mapPerson.id}`),
+    let address = mapPerson.address;
+    var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),
     {
       zoom: 14,
       center: {lat: 37.78, lng: -122.44}
