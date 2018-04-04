@@ -5,7 +5,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 //var db = require('./models');
-//var controllers = require('./controllers');
+var controllers = require('./controllers');
 
 //middleware
 
@@ -27,7 +27,9 @@ app.get('/api/profile', function(req, res){
   })
 });
 
-
+app.get('/api/people', controllers.people.index);//function(req, res){
+//   res.send(`you are at api/people`) //testing route
+// });
 
 
 

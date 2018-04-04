@@ -50,7 +50,7 @@ var test_people = [{
   id: 123,
   name: 'teddy',
   yearOfBirth: 1976,
-  zipcode: 'liverpool'
+  zipcode: 'prague'
 },
 {
   id: 124,
