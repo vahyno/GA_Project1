@@ -48,31 +48,60 @@ function handleError(err){
 function renderPerson(mapPerson){
   console.log('rendering individual', mapPerson);
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
+  let address = "";
+  if (mapPerson.streetAddress !== ""){
+    address += `${mapPerson.streetAddress}, `
+  }
+  if (mapPerson.city !== ""){
+    address += `${mapPerson.city}, `
+  }
+  if (mapPerson.zipcode !== ""){
+    address += `${mapPerson.zipcode}, `
+  }
+  address += mapPerson.country;
+
+
 
   $('#map-container').append(`
       <div id="map-${mapPerson._id}" style="height:50%;width:50%;"></div
 
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">${mapPerson.name}</h5>
-          <p class="card-text"> card</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+
+
+          <div class="col-md-9 col-xs-12">
+            <div class="container">
+              <div class="item">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <h4 class='inline-header'>Name:</h4>
+                    <span class='player-name'>${ mapPerson.name }</span>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h4 class='inline-header'>Gender:</h4>
+                    <span class='player-height'>${ mapPerson.gender }</span>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h4 class='inline-header'>Age:</h4>
+                    <span class='player-age'>${ age }</span>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h4 class="inline-header">Location:</h4>
+                    <span>${ address }</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <button class="btn btn-outline-primary" type="submit">Update</button>
+              <button class="btn btn-outline-primary" type="submit">Delete</button>
+            </div>
+
+          </div>
+
       <hr>
     `);
-
-    let address = "";
-    if (mapPerson.streetAddress !== ""){
-      address += `${mapPerson.streetAddress}, `
-    }
-    if (mapPerson.city !== ""){
-      address += `${mapPerson.city}, `
-    }
-    if (mapPerson.zipcode !== ""){
-      address += `${mapPerson.zipcode}, `
-    }
-    address += mapPerson.country;
 
     mapPerson.address;
     var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),
