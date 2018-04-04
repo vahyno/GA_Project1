@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 function handlePostSuccess(people) {
   console.log(people);
-  renderPerson(person);
+  renderPerson(people);
 };
 
 
