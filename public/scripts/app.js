@@ -3,44 +3,14 @@ console.log('sanity check')// wait for the DOM to finish loading
 $(document).ready(function() {
   console.log('document ready');
   // all code to manipulate the DOM goes inside this function
-    var container=$('#map-container');
+  // $.ajax({
+  //   method: 'GET',
+  //   url: '/api/',
+  //   success: handleSuccess,
+  //   error: handleError
+  // });
 
-    // let indx = 1;
-
-
-    container.append(`
-      <div id="map-${1}" style="height:50%;width:50%;"></div
-
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text"> card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <hr>
-    `);
-    initMaps(1);
-
-    container.append(`
-      <div id="map-${2}" style="height:50%;width:50%;"></div
-
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text"> card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <hr>
-    `);
-    initMaps(2);
-
-
-
-
-
-
+  handleSuccess(test_people)
 
 
 }); // doc ready ends here
@@ -75,3 +45,22 @@ function geocodeAddress(geocoder, resultsMap) {
     }
   });
 }
+
+var test_people = [{
+  id: 123,
+  name: 'teddy',
+  yearOfBirth: 1976,
+  zipcode: 'liverpool'
+},
+{
+  id: 124,
+  name: 'bear',
+  yearOfBirth: 1955,
+  zipcode: '95008'
+},
+{
+  id: 125,
+  name: 'koala',
+  yearOfBirth: 1970,
+  zipcode: '255 bush street'
+}];
