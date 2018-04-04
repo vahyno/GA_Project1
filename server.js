@@ -21,7 +21,7 @@ app.get('/', function (req, res){
 
 app.get('/api/profile', function(req, res){
   res.json({
-    name:"Michal & Marc",
+    name:"Michal & Mark",
     githubUserNames: ["markfdsouza","vahyno"],
     githubLinks: ["https://github.com/markfdsouza","https://github.com/vahyno"],
   })
