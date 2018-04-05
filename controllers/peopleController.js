@@ -47,7 +47,7 @@ function create(req, res) {
 // DELETE /api/people/:personId
 function destroy(req, res) {
   // find one person by id, delete it, and send it back as JSON
-<<<<<<< HEAD
+
 }
 
 // PUT or PATCH /api/people/:personId
@@ -56,7 +56,7 @@ function update(req, res) {
   // and send it back as JSON
 }
 
-=======
+
   console.log('params', req.params.id)
   var id=req.params.id;
   db.Person.findByIdAndRemove(id, function(err, person){
@@ -64,7 +64,7 @@ function update(req, res) {
     res.json(person);
   });
 }
->>>>>>> michal
+
 
 // PUT or PATCH /api/people/:personId
 function update(req, res) {

@@ -67,12 +67,11 @@ function renderPerson(mapPerson){
   console.log('rendering individual', mapPerson);
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
 
-<<<<<<< HEAD
-=======
+
   let location = mapPerson.mapLocation;
   // console.log(location);
 
->>>>>>> michal
+
   let address = "";
   if (location.streetAddress !== ""){
     address += `${location.streetAddress}, `
@@ -90,13 +89,13 @@ function renderPerson(mapPerson){
   $('#map-container').append(`
       <div id="map-${mapPerson._id}" class="map-${mapPerson._id}" style="height:50%;width:50%;"></div>
 
-<<<<<<< HEAD
+
           <div class="col-md-9 col-xs-12">
             <div class="container">
-=======
+
           <div class="col-md-9 col-xs-12 map-${mapPerson._id}">
             <div class="container ">
->>>>>>> michal
+
               <div class="item">
                 <ul class="list-group">
                   <li class="list-group-item">
@@ -122,18 +121,18 @@ function renderPerson(mapPerson){
               </div>
             </div>
             <div class="col-md-4">
-<<<<<<< HEAD
+
               <button id="update" class="submitButton" name="submitButton" class="btn btn-dark">Update</button>
               <button id="delete" class="submitButton" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
           </div>
       <hr>
-=======
+
               <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
               <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
           </div>
->>>>>>> michal
+
     `);
 
     // <div class="item" class="btn btn-outline-secondary">
