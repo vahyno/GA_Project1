@@ -25,6 +25,22 @@ $(document).ready(function() {
     });
   });
 
+  $('#map-container').on('click', '.delete-button', function(){
+    // console.log($(this));
+    var current_id = $(this).data("id")
+    console.log(current_id);
+
+    $.ajax({
+      method:'DELETE',
+      url: `/api/people/${current_id}`,
+      success: function() {
+        console.log(current_id + " was deleted!");
+      },
+      error: handleError,
+
+    })
+  })
+
 
 
 }); // doc ready ends here
@@ -36,6 +52,7 @@ function handlePostSuccess(people) {
 
 
 function handleSuccess(people) {
+
     people.forEach(function(person) {
       renderPerson(person);
     });
@@ -96,8 +113,8 @@ function renderPerson(mapPerson){
               </div>
             </div>
             <div class="col-md-4">
-              <button id="update" class="submitButton" name="submitButton" class="btn btn-dark">Update</button>
-              <button id="delete" class="submitButton" name="submitButton" class="btn btn-dark">Delete</button>
+              <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
+              <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
           </div>
       <hr>
