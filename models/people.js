@@ -11,7 +11,7 @@ var PeopleSchema = new Schema({
   streetAddress: String,
   city: String,
   zipcode: String,
-  country: String
+  country: String,
   mapLocation: MapLocation.schema
 });
 
