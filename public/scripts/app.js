@@ -25,6 +25,23 @@ $(document).ready(function() {
     });
   });
 
+  $('#map-container').on('click', '.delete-button', function(){
+    // console.log($(this));
+    var current_id = $(this).data("id")
+    console.log(current_id);
+
+    $.ajax({
+      method:'DELETE',
+      url: `/api/people/${current_id}`,
+      success: (data) => {
+        console.log(current_id + " was deleted!");
+        $(`.map-${current_id}`).remove();
+      },
+      error: handleError,
+
+    })
+  })
+
 
 
 }); // doc ready ends here
@@ -36,6 +53,7 @@ function handlePostSuccess(people) {
 
 
 function handleSuccess(people) {
+
     people.forEach(function(person) {
       renderPerson(person);
     });
@@ -49,35 +67,46 @@ function renderPerson(mapPerson){
   console.log('rendering individual', mapPerson);
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
 
+<<<<<<< HEAD
+=======
+  let location = mapPerson.mapLocation;
+  // console.log(location);
+
+>>>>>>> michal
   let address = "";
-  if (mapPerson.streetAddress !== ""){
-    address += `${mapPerson.streetAddress}, `
+  if (location.streetAddress !== ""){
+    address += `${location.streetAddress}, `
   }
-  if (mapPerson.city !== ""){
-    address += `${mapPerson.city}, `
+  if (location.city !== ""){
+    address += `${location.city}, `
   }
-  if (mapPerson.zipcode !== ""){
-    address += `${mapPerson.zipcode}, `
+  if (location.zipcode !== ""){
+    address += `${location.zipcode}, `
   }
-  address += mapPerson.country;
+  address += location.country;
 
 
 
   $('#map-container').append(`
-      <div id="map-${mapPerson._id}" style="height:50%;width:50%;"></div
+      <div id="map-${mapPerson._id}" class="map-${mapPerson._id}" style="height:50%;width:50%;"></div>
 
+<<<<<<< HEAD
           <div class="col-md-9 col-xs-12">
             <div class="container">
+=======
+          <div class="col-md-9 col-xs-12 map-${mapPerson._id}">
+            <div class="container ">
+>>>>>>> michal
               <div class="item">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <h4 class='inline-header'>Name:</h4>
-                    <span class='player-name'>${ mapPerson.name }</span>
+                    <span class='player-name' style="text-transform: capitalize">${ mapPerson.name }</span>
                   </li>
 
                   <li class="list-group-item">
                     <h4 class='inline-header'>Gender:</h4>
-                    <span class='player-height'>${ mapPerson.gender }</span>
+                    <span class='player-height' style="text-transform: capitalize">${ mapPerson.gender }</span>
                   </li>
 
                   <li class="list-group-item">
@@ -87,17 +116,24 @@ function renderPerson(mapPerson){
 
                   <li class="list-group-item">
                     <h4 class="inline-header">Location:</h4>
-                    <span>${ address }</span>
+                    <span style="text-transform: capitalize">${ address }</span>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-md-4">
+<<<<<<< HEAD
               <button id="update" class="submitButton" name="submitButton" class="btn btn-dark">Update</button>
               <button id="delete" class="submitButton" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
           </div>
       <hr>
+=======
+              <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
+              <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
+            </div>
+          </div>
+>>>>>>> michal
     `);
 
     // <div class="item" class="btn btn-outline-secondary">

@@ -7,12 +7,21 @@ var PeopleSchema = new Schema({
   name: String,
   gender: String,
   yearOfBirth: Number,
+<<<<<<< HEAD
   streetAddress: String,
   city: String,
   zipcode: String,
   country: String
   //mapLocation: [MapLocation.schema]
   
+=======
+  // streetAddress: String,
+  // city: String,
+  // zipcode: String,
+  // country: String
+  mapLocation: MapLocation.schema
+
+>>>>>>> michal
 });
 
 var Person = mongoose.model('Person', PeopleSchema );

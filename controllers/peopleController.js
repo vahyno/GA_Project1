@@ -1,43 +1,6 @@
 var db = require("../models"); //models later on
 
-// var test_people = [{
-//   id: 123,
-//   name: 'teddy',
-//   yearOfBirth: 1976,
-//   zipcode: 'prague'
-// },
-// {
-//   id: 124,
-//   name: 'bear',
-//   yearOfBirth: 1955,
-//   zipcode: 'berlin'
-// },
-// {
-//   id: 125,
-//   name: 'koala',
-//   yearOfBirth: 1960,
-//   zipcode: '255 bush street'
-// },{
-//   id: 126,
-//   name: 'monkey',
-//   yearOfBirth: 1974,
-//   zipcode: 'oakland'
-// },
-// {
-//   id: 127,
-//   name: 'huuhu',
-//   yearOfBirth: 1900,
-//   zipcode: 'madrid'
-// },
-// {
-//   id: 128,
-//   name: 'baba',
-//   yearOfBirth: 2000,
-//   zipcode: 'san rafael, california'
-// }];
-
-
-// GET /api/players
+// GET /api/people
 function index(req, res) {
   // res.send(`made it to api/people in controller`)
   // send back all people as JSON
@@ -55,8 +18,27 @@ function index(req, res) {
 function create(req, res) {
   // create an album based on request body and send it back as JSON
   console.log(req.body);
+  // { name: 'Humpty Dumpty2',
+  // gender: '',
+  // yearOfBirth: '',
+  // streetAddress: '1435 mlk',
+  // city: '',
+  // zipcode: '',
+  // country: 'us' }
 
-  db.Person.create(req.body, function(err, person) {
+  db.Person.create({
+    name: req.body.name,
+    gender: req.body.gender,
+    yearOfBirth: req.body.yearOfBirth,
+    mapLocation:
+    {
+      streetAddress: req.body.streetAddress,
+      city: req.body.city,
+      zipcode: req.body.zipcode,
+      country: req.body.country
+    }
+  }, function(err, person) {
+    console.log(person)
     if (err) { console.log('error', err); }
     res.json(person);
   });
@@ -65,7 +47,24 @@ function create(req, res) {
 // DELETE /api/people/:personId
 function destroy(req, res) {
   // find one person by id, delete it, and send it back as JSON
+<<<<<<< HEAD
 }
+
+// PUT or PATCH /api/people/:personId
+function update(req, res) {
+  // find one person by id, update it based on request body,
+  // and send it back as JSON
+}
+
+=======
+  console.log('params', req.params.id)
+  var id=req.params.id;
+  db.Person.findByIdAndRemove(id, function(err, person){
+    if (err) { console.log('error', err); }
+    res.json(person);
+  });
+}
+>>>>>>> michal
 
 // PUT or PATCH /api/people/:personId
 function update(req, res) {
@@ -75,13 +74,9 @@ function update(req, res) {
 
 
 
-
-
-
-
 module.exports = {
   index: index,
   create: create,
-  // destroy: destroy,
+  destroy: destroy,
   // update: update
 }

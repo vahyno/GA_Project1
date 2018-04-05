@@ -31,7 +31,7 @@ app.get('/api/people', controllers.people.index);
 
 app.post('/api/people', controllers.people.create);
 
-
+app.delete('/api/people/:id', controllers.people.destroy);
 
 // server start
 app.listen(process.env.PORT || 3000, function(){
