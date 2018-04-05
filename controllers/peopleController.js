@@ -18,8 +18,27 @@ function index(req, res) {
 function create(req, res) {
   // create an album based on request body and send it back as JSON
   console.log(req.body);
+  // { name: 'Humpty Dumpty2',
+  // gender: '',
+  // yearOfBirth: '',
+  // streetAddress: '1435 mlk',
+  // city: '',
+  // zipcode: '',
+  // country: 'us' }
 
-  db.Person.create(req.body, function(err, person) {
+  db.Person.create({
+    name: req.body.name,
+    gender: req.body.gender,
+    yearOfBirth: req.body.yearOfBirth,
+    mapLocation:
+    {
+      streetAddress: req.body.streetAddress,
+      city: req.body.city,
+      zipcode: req.body.zipcode,
+      country: req.body.country
+    }
+  }, function(err, person) {
+    console.log(person)
     if (err) { console.log('error', err); }
     res.json(person);
   });

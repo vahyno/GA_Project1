@@ -49,16 +49,17 @@ function renderPerson(mapPerson){
   console.log('rendering individual', mapPerson);
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
 
-  let location = mapPerson.mapLocation[0];
+  let location = mapPerson.mapLocation;
+  // console.log(location);
 
   let address = "";
-  if (/*location.streetAddress === undefined || */location.streetAddress !== ""){
+  if (location.streetAddress !== ""){
     address += `${location.streetAddress}, `
   }
-  if (/*location.city !== undefined || */location.city !== ""){
+  if (location.city !== ""){
     address += `${location.city}, `
   }
-  if (/*location.zipcode !== undefined || */location.zipcode !== ""){
+  if (location.zipcode !== ""){
     address += `${location.zipcode}, `
   }
   address += location.country;
