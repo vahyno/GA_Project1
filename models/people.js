@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var MapLocation = require('./location.js')
+
 var PeopleSchema = new Schema({
   name: String,
   gender: String,
@@ -9,7 +11,8 @@ var PeopleSchema = new Schema({
   city: String,
   zipcode: String,
   country: String
-  // address: String
+  //mapLocation: [MapLocation.schema]
+  
 });
 
 var Person = mongoose.model('Person', PeopleSchema );

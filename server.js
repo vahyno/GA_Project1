@@ -34,7 +34,6 @@ app.post('/api/people', controllers.people.create);
 
 
 // server start
-
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log('HTTP server listening at localhost:3000');
 });

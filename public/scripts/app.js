@@ -48,6 +48,7 @@ function handleError(err){
 function renderPerson(mapPerson){
   console.log('rendering individual', mapPerson);
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
+
   let address = "";
   if (mapPerson.streetAddress !== ""){
     address += `${mapPerson.streetAddress}, `
@@ -64,8 +65,6 @@ function renderPerson(mapPerson){
 
   $('#map-container').append(`
       <div id="map-${mapPerson._id}" style="height:50%;width:50%;"></div
-
-
 
           <div class="col-md-9 col-xs-12">
             <div class="container">
@@ -93,15 +92,20 @@ function renderPerson(mapPerson){
                 </ul>
               </div>
             </div>
-            <div class="item">
-              <button class="btn btn-outline-primary" type="submit">Update</button>
-              <button class="btn btn-outline-primary" type="submit">Delete</button>
+            <div class="col-md-4">
+              <button id="update" class="submitButton" name="submitButton" class="btn btn-dark">Update</button>
+              <button id="delete" class="submitButton" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
-
           </div>
-
       <hr>
     `);
+
+    // <div class="item" class="btn btn-outline-secondary">
+    //   <button class="btn btn-outline-secondary" type="submit">Update</button>
+    //   <button class="btn btn-outline-secondary" type="submit">Delete</button>
+    // </div>
+
+
 
     mapPerson.address;
     var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),

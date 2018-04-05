@@ -62,6 +62,17 @@ function create(req, res) {
   });
 }
 
+// DELETE /api/people/:personId
+function destroy(req, res) {
+  // find one person by id, delete it, and send it back as JSON
+}
+
+// PUT or PATCH /api/people/:personId
+function update(req, res) {
+  // find one person by id, update it based on request body,
+  // and send it back as JSON
+}
+
 
 
 
