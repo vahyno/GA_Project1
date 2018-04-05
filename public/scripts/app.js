@@ -33,8 +33,9 @@ $(document).ready(function() {
     $.ajax({
       method:'DELETE',
       url: `/api/people/${current_id}`,
-      success: function() {
+      success: (data) => {
         console.log(current_id + " was deleted!");
+        $(`.map-${current_id}`).remove();
       },
       error: handleError,
 
@@ -84,10 +85,10 @@ function renderPerson(mapPerson){
 
 
   $('#map-container').append(`
-      <div id="map-${mapPerson._id}" style="height:50%;width:50%;"></div
+      <div id="map-${mapPerson._id}" class="map-${mapPerson._id}" style="height:50%;width:50%;"></div>
 
-          <div class="col-md-9 col-xs-12">
-            <div class="container">
+          <div class="col-md-9 col-xs-12 map-${mapPerson._id}">
+            <div class="container ">
               <div class="item">
                 <ul class="list-group">
                   <li class="list-group-item">
@@ -117,7 +118,6 @@ function renderPerson(mapPerson){
               <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
           </div>
-      <hr>
     `);
 
     // <div class="item" class="btn btn-outline-secondary">

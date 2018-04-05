@@ -47,6 +47,12 @@ function create(req, res) {
 // DELETE /api/people/:personId
 function destroy(req, res) {
   // find one person by id, delete it, and send it back as JSON
+  console.log('params', req.params.id)
+  var id=req.params.id;
+  db.Person.findByIdAndRemove(id, function(err, person){
+    if (err) { console.log('error', err); }
+    res.json(person);
+  });
 }
 
 // PUT or PATCH /api/people/:personId
