@@ -1,6 +1,6 @@
 var db = require("../models"); //models later on
 
-// GET /api/players
+// GET /api/people
 function index(req, res) {
   // res.send(`made it to api/people in controller`)
   // send back all people as JSON

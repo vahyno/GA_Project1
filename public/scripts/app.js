@@ -49,17 +49,19 @@ function renderPerson(mapPerson){
   console.log('rendering individual', mapPerson);
   var age = new Date().getFullYear() - parseInt(mapPerson.yearOfBirth);
 
+  let location = mapPerson.mapLocation[0];
+
   let address = "";
-  if (mapPerson.streetAddress !== ""){
-    address += `${mapPerson.streetAddress}, `
+  if (/*location.streetAddress === undefined || */location.streetAddress !== ""){
+    address += `${location.streetAddress}, `
   }
-  if (mapPerson.city !== ""){
-    address += `${mapPerson.city}, `
+  if (/*location.city !== undefined || */location.city !== ""){
+    address += `${location.city}, `
   }
-  if (mapPerson.zipcode !== ""){
-    address += `${mapPerson.zipcode}, `
+  if (/*location.zipcode !== undefined || */location.zipcode !== ""){
+    address += `${location.zipcode}, `
   }
-  address += mapPerson.country;
+  address += location.country;
 
 
 
@@ -72,12 +74,12 @@ function renderPerson(mapPerson){
                 <ul class="list-group">
                   <li class="list-group-item">
                     <h4 class='inline-header'>Name:</h4>
-                    <span class='player-name'>${ mapPerson.name }</span>
+                    <span class='player-name' style="text-transform: capitalize">${ mapPerson.name }</span>
                   </li>
 
                   <li class="list-group-item">
                     <h4 class='inline-header'>Gender:</h4>
-                    <span class='player-height'>${ mapPerson.gender }</span>
+                    <span class='player-height' style="text-transform: capitalize">${ mapPerson.gender }</span>
                   </li>
 
                   <li class="list-group-item">
@@ -87,7 +89,7 @@ function renderPerson(mapPerson){
 
                   <li class="list-group-item">
                     <h4 class="inline-header">Location:</h4>
-                    <span>${ address }</span>
+                    <span style="text-transform: capitalize">${ address }</span>
                   </li>
                 </ul>
               </div>
