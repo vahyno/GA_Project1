@@ -47,26 +47,38 @@ $(document).ready(function() {
     var current_id = $(this).data("id")
     console.log(current_id);
 
-    // $.ajax({
-    //   method:'PUT',
-    //   url: `/api/people/${current_id}`,
-    //   success: (data) => {
-    //     console.log(current_id + " was deleted!");
-    //     $(`.map-${current_id}`).remove();
-    //   },
-    //   error: handleError,
-    //
-    // })
+    $.ajax({
+      method:'GET',
+      url: `/api/people/${current_id}`,
+      success: (data) => {
+        console.log(`get data for user=${current_id}`);
+        console.log(data);
+        populateForm(data);
+        //$(`.map-${current_id}`).remove();
+      },
+      error: handleError,
+    })
   })
 
 
 }); // doc ready ends here
+
+
 
 function handlePostSuccess(people) {
   console.log(people);
   renderPerson(people);
 };
 
+function populateForm(person){
+  $('#modal-name').val(person.name);
+  $('#modal-gender').val(person.gender);
+  $('#modal-yearOfBirth').val(person.yearOfBirth);
+  $('#modal-streetAddress').val(person.mapLocation.streetAddress);
+  $('#modal-city').val(person.mapLocation.city);
+  $('#modal-zipcode').val(person.mapLocation.zipcode);
+  $('#modal-country').val(person.mapLocation.country);
+}
 
 function handleSuccess(people) {
 
