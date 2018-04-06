@@ -42,6 +42,22 @@ $(document).ready(function() {
     })
   })
 
+  $('#map-container').on('click', '.update-button', function(){
+    // console.log($(this));
+    var current_id = $(this).data("id")
+    console.log(current_id);
+
+    // $.ajax({
+    //   method:'PUT',
+    //   url: `/api/people/${current_id}`,
+    //   success: (data) => {
+    //     console.log(current_id + " was deleted!");
+    //     $(`.map-${current_id}`).remove();
+    //   },
+    //   error: handleError,
+    //
+    // })
+  })
 
 
 }); // doc ready ends here
@@ -116,8 +132,13 @@ function renderPerson(mapPerson){
                   </li>
                 </ul>
                 <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
-                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
-                <button class="save-button" name="submitButton" class="btn btn-dark">  Save  </button>
+                <!-- Button trigger modal -->
+                <button data-id="${ mapPerson._id }"
+                  class="update-button"
+                  name="submitButton"
+                  class="btn btn-dark"
+                  data-toggle="modal"
+                  data-target="#exampleModal">Update</button>
               </div>
             </div>
             </div>
