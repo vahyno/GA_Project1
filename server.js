@@ -35,7 +35,7 @@ app.post('/api/people', controllers.people.create);
 
 app.delete('/api/people/:id', controllers.people.destroy);
 
-
+app.put('/api/people/:id', controllers.people.update);
 
 // server start
 

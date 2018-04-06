@@ -74,6 +74,15 @@ function destroy(req, res) {
 function update(req, res) {
   // find one person by id, update it based on request body,
   // and send it back as JSON
+  console.log('params', req.params.id);
+  var id=req.params.id;
+  var personToUpdate=req.body;
+  console.log('personToUpdate=', personToUpdate);
+  db.Person.findByIdAndUpdate(id,{new : true},function(err, updatedPerson){
+    if (err) { console.log('error', err); }
+    console.log(`personToUpdate: ${personToUpdate}`);
+    res.json(updatedPerson);
+  });
 }
 
 
@@ -83,5 +92,5 @@ module.exports = {
   getPersonById:getPersonById,
   create: create,
   destroy: destroy,
-  // update: update
+  update: update
 }

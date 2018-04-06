@@ -43,7 +43,6 @@ $(document).ready(function() {
   })
 
   $('#map-container').on('click', '.update-button', function(){
-    // console.log($(this));
     var current_id = $(this).data("id")
     console.log(current_id);
 
@@ -51,14 +50,32 @@ $(document).ready(function() {
       method:'GET',
       url: `/api/people/${current_id}`,
       success: (data) => {
-        console.log(`get data for user=${current_id}`);
-        console.log(data);
         populateForm(data);
+      },
+      error: handleError,
+    })
+  })
+
+  $('#modal-personData-form').on('submit', function(event){
+    event.preventDefault();
+    var current_id = $('#modal-id').val();
+    var formData = $(this).serialize();
+    console.log(`current_id=${current_id}`);
+    console.log(`formData= ${formData}`);
+
+    $.ajax({
+      method:'PUT',
+      url: `/api/people/${current_id}`,
+      data:formData,
+      success: (data) => {
+        console.log(`success update data for user=${current_id}`);
+        console.log(data);
         //$(`.map-${current_id}`).remove();
       },
       error: handleError,
     })
   })
+
 
 
 }); // doc ready ends here
@@ -71,6 +88,7 @@ function handlePostSuccess(people) {
 };
 
 function populateForm(person){
+  $('#modal-id').val(person._id);
   $('#modal-name').val(person.name);
   $('#modal-gender').val(person.gender);
   $('#modal-yearOfBirth').val(person.yearOfBirth);
@@ -150,7 +168,7 @@ function renderPerson(mapPerson){
                   name="submitButton"
                   class="btn btn-dark"
                   data-toggle="modal"
-                  data-target="#exampleModal">Update</button>
+                  data-target="#modal-container">Update</button>
               </div>
             </div>
             </div>
