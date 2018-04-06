@@ -1,12 +1,12 @@
 .jumbotron {
-  background-image: url(../images/globes01.jpg);
+  background-image: url(../images/satellite.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: #EEE;
 }
 
 .jumbotron .container {
-  height: 350px;
+  height: 50em;
 }
 
 .inline-header {
@@ -20,19 +20,6 @@
 }
 
 
-
-/* map */
-/* .container{
-  display: flex;
-  justify-content: center;
-  margin: 0;
-
-}
-.item{
-  display:flex;
-  margin: 0;
-  flex-grow: 1;
-} */
 #map {
   height: 100%;
 }
@@ -41,19 +28,6 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
 }
 
 /* end map */
@@ -89,3 +63,24 @@ legend{
 body {
   background-color: gold;
 }
+
+.mapo{
+   position: absolute;
+   overflow: visible;
+   left:20%;
+
+}
+
+.item{
+ position: relative;
+ left: 50%;
+ margin-bottom: 90px;
+ width:50%;
+ height:80%;
+}
+fieldset{
+  margin-bottom: 30px;
+}
+/* .grid{
+  border-bottom: :1px black solid;
+} */

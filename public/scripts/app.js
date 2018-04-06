@@ -85,25 +85,29 @@ function renderPerson(mapPerson){
 
 
   $('#map-container').append(`
-      <div id="map-${mapPerson._id}" class="map-${mapPerson._id}" style="height:50%;width:50%;"></div>
 
-          <div class="col-md-9 col-xs-12 map-${mapPerson._id}">
+          <div class="col map-${mapPerson._id}">
+          <div id="map-${mapPerson._id}" class="map-${mapPerson._id} mapo" style="height:23em;width:33em;"></div>
+
             <div class="container ">
+            <div class="row personInfo">
+
+            <div class="col grid">
               <div class="item">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <h4 class='inline-header'>Name:</h4>
-                    <span class='player-name' style="text-transform: capitalize">${ mapPerson.name }</span>
+                    <span class='person-name' style="text-transform: capitalize">${ mapPerson.name }</span>
                   </li>
 
                   <li class="list-group-item">
                     <h4 class='inline-header'>Gender:</h4>
-                    <span class='player-height' style="text-transform: capitalize">${ mapPerson.gender }</span>
+                    <span class='person-gender' style="text-transform: capitalize">${ mapPerson.gender }</span>
                   </li>
 
                   <li class="list-group-item">
                     <h4 class='inline-header'>Age:</h4>
-                    <span class='player-age'>${ age }</span>
+                    <span class='person-age'>${ age }</span>
                   </li>
 
                   <li class="list-group-item">
@@ -111,11 +115,11 @@ function renderPerson(mapPerson){
                     <span style="text-transform: capitalize">${ address }</span>
                   </li>
                 </ul>
+                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
+                <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
+
               </div>
             </div>
-            <div class="col-md-4">
-              <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
-              <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
             </div>
           </div>
     `);
