@@ -1,12 +1,12 @@
 .jumbotron {
-  background-image: url(../images/globes01.jpg);
+  background-image: url(../images/satellite.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: #EEE;
 }
 
 .jumbotron .container {
-  height: 350px;
+  height: 60em;
 }
 
 .inline-header {
@@ -16,23 +16,11 @@
 }
 
 .jumbotron .h1, .jumbotron h1 {
-    color: #B4B7BA;
+    /* color: #B4B7BA; */
+    color: black;
 }
 
 
-
-/* map */
-/* .container{
-  display: flex;
-  justify-content: center;
-  margin: 0;
-
-}
-.item{
-  display:flex;
-  margin: 0;
-  flex-grow: 1;
-} */
 #map {
   height: 100%;
 }
@@ -42,23 +30,10 @@ html, body {
   margin: 0;
   padding: 0;
 }
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
 
 /* end map */
 
-.submitButton {
+Button {
   color: #fff;
   background-color: #000;
   border: #fff solid 2px;
@@ -66,10 +41,10 @@ html, body {
   width: : 4em;
 }
 
-h1 {
+h1.display-4 {
   text-align: center;
-  font-size: 2.5em;
-  padding-top: 1em;
+  font-size: 6em;
+  padding-top: 2em;
   padding-bottom: 1em;
   text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 
@@ -87,5 +62,42 @@ legend{
 }
 
 body {
-  background-color: gold;
+  /* background-color: gold; */
+  /* background: linear-gradient(white, black); */
+  /* background-repeat: no-repeat; */
+  background-image: url(../images/satellite0.jpg);
+  height: 100vh;
+}
+
+.mapo{
+   position: absolute;
+   overflow: visible;
+   left:20%;
+
+}
+
+.item{
+ position: relative;
+ left: 50%;
+ margin-bottom: 90px;
+ width:50%;
+ height:80%;
+}
+fieldset{
+  margin-bottom: 30px;
+}
+
+label {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 1,5em;
+  color: black;
+}
+
+legend {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 2em;
+}
+
+.list-group-item {
+  font-size: 1.3em;
 }
