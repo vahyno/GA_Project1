@@ -29,9 +29,13 @@ app.get('/api/profile', function(req, res){
 
 app.get('/api/people', controllers.people.index);
 
+app.get('/api/people/:id', controllers.people.getPersonById);
+
 app.post('/api/people', controllers.people.create);
 
 app.delete('/api/people/:id', controllers.people.destroy);
+
+app.put('/api/people/:id', controllers.people.update);
 
 // server start
 app.listen(process.env.PORT || 3000, function(){

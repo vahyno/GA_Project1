@@ -42,15 +42,64 @@ $(document).ready(function() {
     })
   })
 
+  $('#map-container').on('click', '.update-button', function(){
+    var current_id = $(this).data("id")
+    console.log(current_id);
+
+    $.ajax({
+      method:'GET',
+      url: `/api/people/${current_id}`,
+      success: (data) => {
+        populateForm(data);
+      },
+      error: handleError,
+    })
+  })
+
+  $('#modal-personData-form').on('submit', function(event){
+    event.preventDefault();
+    var current_id = $('#modal-id').val();
+    var formData = $(this).serialize();
+    console.log(`current_id=${current_id}`);
+    console.log(`formData= ${formData}`);
+
+    $.ajax({
+      method:'PUT',
+      url: `/api/people/${current_id}`,
+      data:formData,
+      success: (data) => {
+        console.log(`success update data for user=${current_id}`);
+        console.log(data);
+        $(`.map-${current_id}`).remove();
+
+      },
+      error: handleError,
+    });
+    console.log("ajax PUT completed!");
+    location.reload();
+  })
+
 
 
 }); // doc ready ends here
+
+
 
 function handlePostSuccess(people) {
   console.log(people);
   renderPerson(people);
 };
 
+function populateForm(person){
+  $('#modal-id').val(person._id);
+  $('#modal-name').val(person.name);
+  $('#modal-gender').val(person.gender);
+  $('#modal-yearOfBirth').val(person.yearOfBirth);
+  $('#modal-streetAddress').val(person.mapLocation.streetAddress);
+  $('#modal-city').val(person.mapLocation.city);
+  $('#modal-zipcode').val(person.mapLocation.zipcode);
+  $('#modal-country').val(person.mapLocation.country);
+}
 
 function handleSuccess(people) {
 
@@ -116,7 +165,13 @@ function renderPerson(mapPerson){
                   </li>
                 </ul>
                 <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
-                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
+                <!-- Button trigger modal -->
+                <button data-id="${ mapPerson._id }"
+                  class="update-button"
+                  name="submitButton"
+                  class="btn btn-dark"
+                  data-toggle="modal"
+                  data-target="#modal-container">Update</button>
               </div>
             </div>
             </div>
