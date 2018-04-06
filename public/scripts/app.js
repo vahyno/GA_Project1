@@ -124,17 +124,13 @@ function renderPerson(mapPerson){
           </div>
     `);
 
-    // <div class="item" class="btn btn-outline-secondary">
-    //   <button class="btn btn-outline-secondary" type="submit">Update</button>
-    //   <button class="btn btn-outline-secondary" type="submit">Delete</button>
-    // </div>
 
 
 
     mapPerson.address;
     var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),
     {
-      zoom: 14,
+      zoom: 13,
       center: {lat: 37.78, lng: -122.44}
     });
     var geocoder = new google.maps.Geocoder();
