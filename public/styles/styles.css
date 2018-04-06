@@ -32,7 +32,7 @@ html, body {
 
 /* end map */
 
-.submitButton {
+Button {
   color: #fff;
   background-color: #000;
   border: #fff solid 2px;
@@ -40,10 +40,10 @@ html, body {
   width: : 4em;
 }
 
-h1 {
+h1.display-4 {
   text-align: center;
-  font-size: 2.5em;
-  padding-top: 1em;
+  font-size: 6em;
+  padding-top: 2em;
   padding-bottom: 1em;
   text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 
@@ -61,7 +61,11 @@ legend{
 }
 
 body {
-  background-color: gold;
+  /* background-color: gold; */
+  /* background: linear-gradient(white, black); */
+  /* background-repeat: no-repeat; */
+  background-image: url(../images/satellite0.jpg);
+  height: 100vh;
 }
 
 .mapo{
@@ -81,6 +85,17 @@ body {
 fieldset{
   margin-bottom: 30px;
 }
-/* .grid{
-  border-bottom: :1px black solid;
-} */
+
+label {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 1em;
+}
+
+legend {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 2em;
+}
+
+.list-group-item {
+  font-size: 1.3em;
+}
