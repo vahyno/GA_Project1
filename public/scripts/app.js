@@ -76,7 +76,7 @@ $(document).ready(function() {
       error: handleError,
     });
     console.log("ajax PUT completed!");
-    $(`.map-${current_id}`).remove();
+    location.reload();
   })
 
 
