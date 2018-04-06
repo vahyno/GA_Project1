@@ -6,7 +6,7 @@
 }
 
 .jumbotron .container {
-  height: 50em;
+  height: 60em;
 }
 
 .inline-header {
@@ -16,7 +16,8 @@
 }
 
 .jumbotron .h1, .jumbotron h1 {
-    color: #B4B7BA;
+    /* color: #B4B7BA; */
+    color: black;
 }
 
 
@@ -62,8 +63,6 @@ legend{
 
 body {
   /* background-color: gold; */
-  /* background: linear-gradient(white, black); */
-  /* background-repeat: no-repeat; */
   background-image: url(../images/satellite0.jpg);
   height: 100vh;
 }
@@ -88,7 +87,8 @@ fieldset{
 
 label {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-  font-size: 1em;
+  font-size: 1,5em;
+  color: black;
 }
 
 legend {

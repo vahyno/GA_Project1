@@ -5,10 +5,6 @@ var seedPeople = [
   name: 'Baba Booey',
   gender: 'male',
   yearOfBirth: 1961,
-  //streetAddress: "",
-  //city: "San Rafael",
-  //zipcode: "",
-  //country: "US"
   mapLocation:
     { streetAddress : "" ,
       city: "Greenwich" ,
@@ -20,13 +16,42 @@ var seedPeople = [
     name: 'Howard S',
     gender: 'male',
     yearOfBirth: 1954,
-    //streetAddress: "",
-    //city: "San Rafael",
-    //zipcode: "",
-    //country: "US"
     mapLocation:
     { streetAddress : "" ,
       city: "Queens, New York City" ,
+      zipcode: "" ,
+      country: "US",
+    }
+  },
+  {
+    name: 'Method Man',
+    gender: 'male',
+    yearOfBirth: 1971,
+    mapLocation:
+    { streetAddress : "" ,
+      city: "Town of Hempstead, NY" ,
+      zipcode: "" ,
+      country: "US",
+    }
+  },
+  {
+    name: 'Whitney Cummings',
+    gender: 'female',
+    yearOfBirth: 1982,
+    mapLocation:
+    { streetAddress : "Belfield way" ,
+      city: "Los Angeles" ,
+      zipcode: "" ,
+      country: "US",
+    }
+  },
+  {
+    name: 'Mark Zuckerberg',
+    gender: 'male',
+    yearOfBirth: 1984,
+    mapLocation:
+    { streetAddress : "1456 Edgewood Dr" ,
+      city: "Palo Alto" ,
       zipcode: "" ,
       country: "US",
     }

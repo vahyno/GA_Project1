@@ -115,26 +115,22 @@ function renderPerson(mapPerson){
                     <span style="text-transform: capitalize">${ address }</span>
                   </li>
                 </ul>
-                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
                 <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
-
+                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
+                <button class="save-button" name="submitButton" class="btn btn-dark">  Save  </button>
               </div>
             </div>
             </div>
           </div>
     `);
 
-    // <div class="item" class="btn btn-outline-secondary">
-    //   <button class="btn btn-outline-secondary" type="submit">Update</button>
-    //   <button class="btn btn-outline-secondary" type="submit">Delete</button>
-    // </div>
 
 
 
     mapPerson.address;
     var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),
     {
-      zoom: 14,
+      zoom: 13,
       center: {lat: 37.78, lng: -122.44}
     });
     var geocoder = new google.maps.Geocoder();

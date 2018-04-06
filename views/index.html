@@ -29,72 +29,145 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">People's Locations</h1>
-        <!-- <p class="lead"></p> -->
+        <!-- Form start-->
+        <section class="container">
+             <div class="row">
+             <div class="col-md-10 col-md-offset-1">
+
+               <form id='personData-form' class="form-horizontal">
+                 <fieldset>
+
+                   <!-- Form Name -->
+                   <legend>Your info</legend>
+
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="name">Your name:</label>
+                     <div class="col-md-4">
+                     <input id="name" name="name" type="text" placeholder="Rocky Balboa" class="form-control input-md" ="">
+                     </div>
+                   </div>
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="height">Gender:</label>
+                     <div class="col-md-4">
+                       <input id="gender" name="gender" type="text" placeholder="female/male" class="form-control input-md">
+                     </div>
+                   </div>
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="yearOfBirth">Year of birth:</label>
+                     <div class="col-md-4">
+                     <input id="textinput" name="yearOfBirth" type="text" pattern="\d{4}" placeholder="1970" class="form-control input-md" >
+                     </div>
+                   </div>
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="streetAddress">Street address</label>
+                     <div class="col-md-4">
+                     <input id="streetAddress" name="streetAddress" type="text" placeholder="255 Bush street" class="form-control input-md">
+                     </div>
+                   </div>
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="city">City</label>
+                     <div class="col-md-4">
+                     <input id="city" name="city" type="text" placeholder="San Francisco" class="form-control input-md">
+                     </div>
+                   </div>
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="zipcode">Zip code</label>
+                     <div class="col-md-4">
+                     <input id="zipcode" name="zipcode" type="text" placeholder="94104" class="form-control input-md">
+                     </div>
+                   </div>
+                   <!-- Text input-->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="Country">Country</label>
+                     <div class="col-md-4">
+                     <input id="country" name="country" type="text" placeholder="US" class="form-control input-md" required>
+                     </div>
+                   </div>
+                   <!-- Button -->
+                   <div class="form-group">
+                     <label class="col-md-4 control-label" for="submitButton">Submit to Save</label>
+                     <div class="col-md-4">
+                       <button id="submitButton" class="submitButton" name="submitButton" class="btn btn-primary">Submit</button>
+                     </div>
+                   </div>
+                 </fieldset>
+               </form>
+             </div>
+             </div>
+           </section>
+        <!-- Form end-->
       </div>
     </div>
 
     <!-- Form start-->
-    <section class="container">
-         <div class="row">
+    <!-- <section class="container"> -->
+         <!-- <div class="row">
          <div class="col-md-10 col-md-offset-1">
 
            <form id='personData-form' class="form-horizontal">
-             <fieldset>
+             <fieldset> -->
 
                <!-- Form Name -->
-               <legend>Your info</legend>
+               <!-- <legend>Your info</legend> -->
 
                <!-- Text input-->
-               <div class="form-group">
+               <!-- <div class="form-group">
                  <label class="col-md-4 control-label" for="name">Your name:</label>
                  <div class="col-md-4">
                  <input id="name" name="name" type="text" placeholder="Rocky Balboa" class="form-control input-md" required>
                  </div>
-               </div>
+               </div>-->
                <!-- Text input-->
-               <div class="form-group">
-                 <label class="col-md-4 control-label" for="gender">Gender:</label>
+
+               <!-- <div class="form-group">
+                 <label class="col-md-4 control-label" for="height">Gender:</label>
                  <div class="col-md-4">
                    <input id="gender" name="gender" type="text" placeholder="female/male" class="form-control input-md">
                  </div>
-               </div>
+               </div> -->
                <!-- Text input-->
-               <div class="form-group">
+               <!-- <div class="form-group">
                  <label class="col-md-4 control-label" for="yearOfBirth">Year of birth:</label>
                  <div class="col-md-4">
                  <input id="textinput" name="yearOfBirth" type="text" pattern="\d{4}" placeholder="1970" class="form-control input-md" required>
                  </div>
-               </div>
+               </div> -->
                <!-- Text input-->
-               <div class="form-group">
+               <!-- <div class="form-group">
                  <label class="col-md-4 control-label" for="streetAddress">Street address</label>
                  <div class="col-md-4">
                  <input id="streetAddress" name="streetAddress" type="text" placeholder="255 Bush street" class="form-control input-md">
                  </div>
-               </div>
+               </div> -->
                <!-- Text input-->
-               <div class="form-group">
+               <!-- <div class="form-group">
                  <label class="col-md-4 control-label" for="city">City</label>
                  <div class="col-md-4">
                  <input id="city" name="city" type="text" placeholder="San Francisco" class="form-control input-md">
                  </div>
-               </div>
+               </div> -->
                <!-- Text input-->
-               <div class="form-group">
+               <!-- <div class="form-group">
                  <label class="col-md-4 control-label" for="zipcode">Zip code</label>
                  <div class="col-md-4">
                  <input id="zipcode" name="zipcode" type="text" placeholder="94104" class="form-control input-md">
                  </div>
-               </div>
+               </div> -->
                <!-- Text input-->
-               <div class="form-group">
-                 <label class="col-md-4 control-label" for="country">Country</label>
+               <!-- <div class="form-group">
+                 <label class="col-md-4 control-label" for="Country">Country</label>
                  <div class="col-md-4">
                  <input id="country" name="country" type="text" placeholder="US" class="form-control input-md" required>
                  </div>
-               </div>
+               </div> -->
                <!-- Button -->
-               <div class="form-group">
+               <!-- <div class="form-group">
                  <label class="col-md-4 control-label" for="submitButton">Submit to Save</label>
                  <div class="col-md-4">
                    <button id="submitButton" class="submitButton" name="submitButton" class="btn btn-primary">Submit</button>
@@ -104,7 +177,7 @@
            </form>
          </div>
          </div>
-       </section>
+       </section> -->
     <!-- Form end-->
 
 
