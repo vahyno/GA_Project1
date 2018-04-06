@@ -74,13 +74,15 @@ function destroy(req, res) {
 function update(req, res) {
   // find one person by id, update it based on request body,
   // and send it back as JSON
+  let formData = req.body;
   console.log('params', req.params.id);
   var id=req.params.id;
   var personToUpdate=req.body;
   console.log('personToUpdate=', personToUpdate);
-  db.Person.findByIdAndUpdate(id,{new : true},function(err, updatedPerson){
+  db.Person.findByIdAndUpdate(id,personToUpdate,{new:true},function(err, updatedPerson){
     if (err) { console.log('error', err); }
-    console.log(`personToUpdate: ${personToUpdate}`);
+    console.log(`findByIdAndUpdate: ${personToUpdate}\n`);
+    console.log(`updatedPerson: ${updatedPerson}`);
     res.json(updatedPerson);
   });
 }

@@ -70,10 +70,13 @@ $(document).ready(function() {
       success: (data) => {
         console.log(`success update data for user=${current_id}`);
         console.log(data);
-        //$(`.map-${current_id}`).remove();
+        $(`.map-${current_id}`).remove();
+
       },
       error: handleError,
-    })
+    });
+    console.log("ajax PUT completed!");
+    $(`.map-${current_id}`).remove();
   })
 
 
