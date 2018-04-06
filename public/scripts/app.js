@@ -115,9 +115,9 @@ function renderPerson(mapPerson){
                     <span style="text-transform: capitalize">${ address }</span>
                   </li>
                 </ul>
-                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
                 <button data-id="${ mapPerson._id }" class="delete-button" name="submitButton" class="btn btn-dark">Delete</button>
-
+                <button class="update-button" name="submitButton" class="btn btn-dark">Update</button>
+                <button class="save-button" name="submitButton" class="btn btn-dark">  Save  </button>
               </div>
             </div>
             </div>
