@@ -19,7 +19,7 @@ app.get('/', function (req, res){
   res.sendFile('views/index.html', {root: __dirname});
 });
 
-app.get('/api/profile', function(req, res){
+app.get('/api/profiles', function(req, res){
   res.json({
     name:"Michal & Mark",
     githubUserNames: ["markfdsouza","vahyno"],
