@@ -3,16 +3,15 @@
 ### description
 *
 
-### Technologies used
-* Front End:
-              * Javascript / Jquery
-              * HTML
-              * CSS
-              * Bootstrap              
-* Back End:
-              * Node.js / Express
-              * MongoDB / Mongoose
-
+## Technologies used:
+### Front End:
+* Javascript / Jquery
+* HTML
+* CSS
+* Bootstrap
+### Back End:
+* Node.js / Express
+* MongoDB / Mongoose
 
 app on Heroku: https://glacial-dusk-91725.herokuapp.com/
 
