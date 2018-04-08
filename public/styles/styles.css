@@ -40,6 +40,7 @@ Button {
   border: #fff solid 2px;
   height: 2.5em;
   width: : 4em;
+  border-radius: 6px;
 }
 
 h1.display-4 {
