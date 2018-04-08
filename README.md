@@ -1,19 +1,16 @@
 # Project 1: People's Locations
 
 ### description
-*
+* build your personal database of all your friends or celebrities you are interested in and locate where they reside.
 
 ## Technologies used:
 ### Front End:
 * Javascript / Jquery
 * HTML
-* CSS
-* Bootstrap
+* CSS / Bootstrap
 ### Back End:
 * Node.js / Express
 * MongoDB / Mongoose
-
-app on Heroku: https://glacial-dusk-91725.herokuapp.com/
 
 ##Installation Steps:
 1. To download the code, use "git clone https://github.com/vahyno/GA_Project1.git" in your terminal.
@@ -21,11 +18,13 @@ app on Heroku: https://glacial-dusk-91725.herokuapp.com/
 3. Run "mongod" in a tab in your terminal.
 4. Run "nodemon" in a separate tab in your terminal.
 5. In your browser go to http://localhost:3000/
+6. Profiles info in browser at http://localhost:3000/api/profiles
 
 ## The team:
-  Michal & Mark
-  Team contacts: http://localhost:3000/api/profiles
+  Michal https://github.com/vahyno & Mark https://github.com/markfdsouza
+
+  app on Heroku: https://glacial-dusk-91725.herokuapp.com/
 
 ## Thanks to:
-* Stacie and all the class mates
-* Special thanks to : Esther and Faisal!
+* Stacie and all of the WDI44 Cohort.
+* Special thanks to : Esther and Faisal for guidance and patience.
