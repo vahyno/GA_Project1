@@ -1,7 +1,7 @@
-# Project 1: People's Locations
+# Project 1: People Finder
 
-### description
-* build your personal database of all your friends or celebrities you are interested in and locate where they reside.
+### Description:
+* Build your personal database of all your friends or celebrities you are interested in and locate where they reside.
 
 ## Technologies used:
 ### Front End:
