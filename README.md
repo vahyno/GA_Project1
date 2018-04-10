@@ -12,7 +12,7 @@
 * Node.js / Express
 * MongoDB / Mongoose
 
-##Installation Steps:
+## Installation Steps:
 1. To download the code, use "git clone https://github.com/vahyno/GA_Project1.git" in your terminal.
 2. Run "npm install".
 3. Run "mongod" in a tab in your terminal.
