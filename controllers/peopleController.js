@@ -33,14 +33,6 @@ function getPersonById(req, res) {
 function create(req, res) {
   // create an album based on request body and send it back as JSON
   console.log(req.body);
-  // { name: 'Humpty Dumpty2',
-  // gender: '',
-  // yearOfBirth: '',
-  // streetAddress: '1435 mlk',
-  // city: '',
-  // zipcode: '',
-  // country: 'us' }
-
   db.Person.create({
     name: req.body.name,
     gender: req.body.gender,
@@ -77,8 +69,18 @@ function update(req, res) {
   let formData = req.body;
   console.log('params', req.params.id);
   var id=req.params.id;
-  var personToUpdate=req.body;
-  console.log('personToUpdate=', personToUpdate);
+  var personToUpdate = {
+    name: req.body.name,
+    gender: req.body.gender,
+    yearOfBirth: req.body.yearOfBirth,
+    mapLocation:
+    {
+      streetAddress: req.body.streetAddress,
+      city: req.body.city,
+      zipcode: req.body.zipcode,
+      country: req.body.country
+    }
+  }
   db.Person.findByIdAndUpdate(id,personToUpdate,{new:true},function(err, updatedPerson){
     if (err) { console.log('error', err); }
     console.log(`findByIdAndUpdate: ${personToUpdate}\n`);
@@ -86,8 +88,6 @@ function update(req, res) {
     res.json(updatedPerson);
   });
 }
-
-
 
 module.exports = {
   index: index,

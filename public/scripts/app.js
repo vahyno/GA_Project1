@@ -102,6 +102,8 @@ function populateForm(person){
 }
 
 function handleSuccess(people) {
+    // global map initialization
+    var mapGlobal = new google.maps.Map(document.getElementById('map'), {zoom: 2, center: {lat: 37.78, lng: -122.44}});
 
     people.forEach(function(person) {
       renderPerson(person);
@@ -131,7 +133,15 @@ function renderPerson(mapPerson){
   }
   address += location.country;
 
+  //geocoder
 
+
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'address': address}, function(results, status) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({map: map, position: results[0].geometry.location,});
+      })
+      
 
   $('#map-container').append(`
 
@@ -179,9 +189,7 @@ function renderPerson(mapPerson){
     `);
 
 
-
-
-    mapPerson.address;
+    //mapPerson.address;
     var map = new google.maps.Map(document.getElementById(`map-${mapPerson._id}`),
     {
       zoom: 13,
@@ -200,4 +208,4 @@ function renderPerson(mapPerson){
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
-  }
+  }      // end of renderPerson function
