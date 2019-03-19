@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project1_map' );
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project1_map', { useNewUrlParser: true });
 
 
 
