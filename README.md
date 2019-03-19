@@ -22,9 +22,3 @@
 
 ## The team:
   Michal https://github.com/vahyno & Mark https://github.com/markfdsouza
-
-  app on Heroku: https://glacial-dusk-91725.herokuapp.com/
-
-## Thanks to:
-* Stacie and all of the WDI44 Cohort.
-* Special thanks to : Esther and Faisal for guidance and patience.
